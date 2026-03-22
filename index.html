@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Shakoor | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #0a0a0a;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.6);
+    position:fixed;
+    width:100%;
+    backdrop-filter: blur(10px);
+}
+
+nav h2{
+    color:#00f7ff;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.typing{
+    color:#00f7ff;
+    border-right:2px solid;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:typing 4s steps(30,end) forwards, blink .7s infinite;
+}
+
+@keyframes typing{
+    to{width:300px;}
+}
+
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+
+/* CARDS */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#111;
+    padding:20px;
+    margin:15px;
+    border-radius:15px;
+    width:250px;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* PROJECT */
+.project{
+    background:#111;
+    margin:20px auto;
+    padding:20px;
+    width:80%;
+    border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+}
+
+/* BUTTON */
+.btn{
+    background:#00f7ff;
+    color:black;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Shakoor.dev</h2>
+    <div>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Hi, I'm Abdul Shakoor 👋</h1>
+    <h2 class="typing">AI Developer | Flutter Dev | Django</h2>
+    <br>
+    <button class="btn" onclick="showHeart()">Click Me ❤️</button>
+</section>
+
+<section id="skills" class="section">
+    <h1>My Skills</h1>
+    <div class="cards">
+        <div class="card">AI Model Development</div>
+        <div class="card">Flutter App Development</div>
+        <div class="card">Django Backend</div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h1>Projects</h1>
+
+    <div class="project">
+        <h2>AI Cotton Crop Disease Detection 🌿</h2>
+        <p>AI based system to detect cotton crop diseases using deep learning.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Abdul Shakoor</p>
+</footer>
+
+<script>
+function showHeart(){
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.top = "100%";
+    heart.style.fontSize = "30px";
+    heart.style.animation = "float 3s linear";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=> heart.remove(),3000);
+}
+
+let style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100vh);}
+}`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
