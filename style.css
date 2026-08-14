@@ -156,3 +156,12 @@ footer a { color: var(--accent); }
   h1 { letter-spacing: -2.5px; }
   footer { flex-direction: column; gap: 10px; }
 }
+.profile-image {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid rgba(103, 232, 165, 0.45);
+    box-shadow: 0 0 70px rgba(103, 232, 165, 0.12);
+}
